@@ -1,0 +1,8 @@
+<h1>Message board homepage</h1>
+<ul>
+    <!-- we use object_list because this is the name of the variable that ListView (in views.py) returns -->
+    <!--  -->
+    {% for post  in all_posts_list %}
+    <li>{{ post }}</li>
+    {% endfor %}
+</ul>
