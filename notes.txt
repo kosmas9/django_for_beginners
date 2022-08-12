@@ -69,3 +69,8 @@ python manage.py runserver
 #3 create Procfile -> web: gunicorn helloworld.wsgi --log-file -
 #4 install gunicorn -> pipenv install gunicorn
 #5 update settings.py -> ALLOWED_HOSTS = ['*']
+#6 create new app -> heroku create
+#6.a ignore static files -> heroku config:set DISABLE_COLLECTSTATIC=1
+#7 push to heroku -> git push heroku main
+#8 make app live -> heroku ps:scale web=1
+#9 heroku open
