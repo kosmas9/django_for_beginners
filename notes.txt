@@ -46,20 +46,28 @@ python manage.py runserver
 #1 update the app/views.py file -> from dgango.views.generic import TemplateView
 #2 create a class that will point to our html file -> class HomePageView(TemplateView):tempalte_name='home.html'
 
-# URLs
+## URLs
 #1 update the project-level urls.py file -> in urlpatterns list add another path with include, pointing to app.url ->  path('', include('pages.urls'))
 #2 create the app-level urls.py file ->
     from django.urls import path
     from .views import HomePageView (this is the class that we created above)
     urlpatterns = [path('', HomePageView.as_view(), name='home')] (don't forget to add "as_view()" at the end of view name)
 
-# Extending Templates
+## Extending Templates
 #1 create a base.html file
 #2 extend the rest of the html files ->
     {% extends 'base.html' %}
     {% block content %}
     <h1> HomePage
     {% endblock content %}
+
+## Static files
+# create a directory in the project-level called static
+# update settings.py STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# CSS
+# create a css directory in the static directory
+# crate a base.css file
+# {% load static %} in our base.html file
 
 # Tests
 #1 update the app.tests.py
