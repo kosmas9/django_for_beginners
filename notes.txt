@@ -12,7 +12,7 @@ pipenv shell to start working in the venv
 ## start a new django Project (don't forget to use . to avoid creating a new directory)
 django-admin startproject helloworld_project .
 
-## start an app
+## Start an app
 python manage.py startapp pages
 then, add this app in the settings.py file of our project, in the INSTALLED_APPS list (app.apps.PagesConfig)
 /////////////////////////////////////////////////////////////////////////////////
@@ -69,6 +69,21 @@ python manage.py runserver
 # crate a base.css file
 # {% load static %} in our base.html file
 
+## Log in
+#1 update the project-level urls.py -> path('accounts/',include('django.contrib.auth.urls'))
+#2 create directory "registration" in the "templates" folder and in this directory file "login.html"
+#3 redirect the user upon successful request -> in settings.py file add LOGIN_REDIRECT_URL = 'home'
+
+## Sign up
+#1 create a new app accounts -> python manage.py startapp accounts
+#2 add the new app to the INSTALLED_APPS in settings.py file
+#3 add a project-level url pointing to the new app
+#4 crate the urls.py file in the app
+#5 from .views import SignUpView
+#6 now go to views and create the class
+#7 create signup.html file in the templates directory
+
+
 # Tests
 #1 update the app.tests.py
 #2 run test -> python manage.py test
@@ -79,7 +94,7 @@ python manage.py runserver
 #3 git commands to push reposotory ->
     git init
     git add -A
-    git commit -m 'initial commit'
+    git commit -m "initial commit"
     git remote add origin https://github.com/kosmas9/django_for_beginners.git
     git branch -M main
     git push -u origin main
