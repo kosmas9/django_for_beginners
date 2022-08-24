@@ -83,6 +83,8 @@ python manage.py runserver
 #6 now go to views and create the class
 #7 create signup.html file in the templates directory
 
+## Users Model
+#
 
 # Tests
 #1 update the app.tests.py
